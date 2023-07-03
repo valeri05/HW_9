@@ -41,7 +41,7 @@ public class RadioTest {
     @Test void shouldNextRadioStationNumber() {
         Radio radio = new Radio();
 
-        radio.currentRadioStationNumber = 4;
+        radio.setCurrentRadioStationNumber(4);
 
         int expected = 5;
         int actual = radio.next();
@@ -52,7 +52,7 @@ public class RadioTest {
     @Test void shouldNextRadioStationNumberAboveMax() {
         Radio radio = new Radio();
 
-        radio.currentRadioStationNumber = 9;
+        radio.setCurrentRadioStationNumber(9);
 
         int expected = 0;
         int actual = radio.next();
@@ -64,7 +64,7 @@ public class RadioTest {
     public void prevRadioStationNumber() {
         Radio radio = new Radio();
 
-        radio.currentRadioStationNumber = 3;
+        radio.setCurrentRadioStationNumber(3);
 
         int expected = 2;
         int actual = radio.prev();
@@ -76,7 +76,7 @@ public class RadioTest {
     public void prevRadioStationNumberLessMin() {
         Radio radio = new Radio();
 
-        radio.currentRadioStationNumber = 0;
+        radio.setCurrentRadioStationNumber(0);
 
         int expected = 9;
         int actual = radio.prev();
@@ -115,7 +115,7 @@ public class RadioTest {
     public void increaseCurrentVolume() {
         Radio radio = new Radio();
 
-        radio.currentVolume = 90;
+        radio.setCurrentVolume(90);
 
         int expected = 91;
         int actual = radio.increaseVolume();
@@ -127,7 +127,7 @@ public class RadioTest {
     public void shouldNotCurrentVolumeAboveMax() {
         Radio radio = new Radio();
 
-        radio.currentVolume = 100;
+        radio.setCurrentVolume(100);
 
         int expected = 0;
         int actual = radio.increaseVolume();
@@ -139,7 +139,7 @@ public class RadioTest {
     public void decreaseCurrentVolume() {
         Radio radio = new Radio();
 
-        radio.currentVolume = 1;
+        radio.setCurrentVolume(1);
 
         int expected = 0;
         int actual = radio.decreaseVolume();
@@ -150,7 +150,7 @@ public class RadioTest {
     public void shouldNotCurrentVolumeLessMin() {
         Radio radio = new Radio();
 
-        radio.currentVolume = 0;
+        radio.setCurrentVolume(0);
 
         int expected = 0;
         int actual = radio.decreaseVolume();
